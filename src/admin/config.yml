@@ -385,6 +385,7 @@ collections:
           - { name: kontakt_knap_tekst, label: Tekst på "Skriv til os"-knapper, widget: string }
           - { name: kontakt_link, label: Link på "Skriv til os"-knapper, widget: string, hint: "Fx https://ig.me/m/sailing.mango eller mailto:jeres@mail.dk" }
           - { name: email, label: E-mail (vises i bunden), widget: string, required: false }
+          - { name: email_overskrift, label: Overskrift over e-mailen i bunden, widget: string, required: false, default: Kontakt os }
           - name: menu
             label: Menu
             label_singular: Menupunkt

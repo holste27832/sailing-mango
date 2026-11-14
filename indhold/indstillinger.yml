@@ -4,6 +4,7 @@ logo: /billeder/logo.png
 kontakt_knap_tekst: Skriv til os
 kontakt_link: https://ig.me/m/sailing.mango
 email: kontakt@sailingmango.dk
+email_overskrift: Kontakt os
 menu:
   - tekst: Togter
     link: /togter/

@@ -433,6 +433,7 @@ body.no-scroll { overflow: hidden; }
 .footer a:hover { color: var(--mango); }
 .footer a span { opacity: .6; font-size: .9rem; }
 .footer__label { font-family: var(--font-head); font-weight: 600; color: #fff; }
+.footer__label--spaced { margin-top: 1.4rem; }
 .footer__copy { margin-top: 3rem; font-size: .85rem; opacity: .6; }
 @media (max-width: 760px) { .footer__inner { grid-template-columns: 1fr; } }
 

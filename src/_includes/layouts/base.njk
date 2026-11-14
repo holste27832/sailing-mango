@@ -50,7 +50,10 @@
         {% for s in site.sociale_medier %}
           <a href="{{ s.link }}" target="_blank" rel="noopener">{{ s.navn }} <span>{{ s.brugernavn }}</span></a>
         {% endfor %}
-        {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+        {% if site.email %}
+          <p class="footer__label footer__label--spaced">{{ site.email_overskrift or "Kontakt os" }}</p>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        {% endif %}
       </div>
     </div>
     <p class="footer__copy container">© {% year %} {{ site.titel }}</p>
