@@ -1,0 +1,32 @@
+titel: Sailing Mango
+beskrivelse: Bliv gast på sejlbåden Mango. Sejl med Tobias og Dave fra ø til ø – med dykning, øde ankerbugter, solnedgange og et fællesskab, du ikke glemmer.
+logo: /billeder/logo.png
+
+# Hvor "Skriv til os"-knapperne skal pege hen.
+# Kan være et link (fx Instagram-besked) eller en e-mail som mailto:navn@domæne.dk
+kontakt_knap_tekst: Skriv til os
+kontakt_link: https://ig.me/m/sailing.mango
+email: ""
+
+menu:
+  - tekst: Togter
+    link: /togter/
+  - tekst: Båden
+    link: /baaden/
+  - tekst: Om os
+    link: /om-os/
+  - tekst: Bliv gast
+    link: /bliv-gast/
+
+sociale_medier:
+  - navn: Instagram
+    brugernavn: "@sailing.mango"
+    link: https://www.instagram.com/sailing.mango/
+  - navn: TikTok
+    brugernavn: "@sailing.mango"
+    link: https://www.tiktok.com/@sailing.mango
+  - navn: Facebook
+    brugernavn: Sailing Mango
+    link: https://www.facebook.com/
+
+bund_tekst: Husk hyggen 🥭

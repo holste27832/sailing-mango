@@ -1,0 +1,405 @@
+# Admin-siden for Sailing Mango (Sveltia CMS)
+# Hvert punkt under "collections" bliver til en menu i admin.
+
+backend:
+  name: github
+  # ⚠️ SKIFT til jeres eget GitHub-brugernavn/repository, fx "tobias123/sailing-mango"
+  repo: holste27832/sailing-mango
+  branch: main
+  commit_messages:
+    create: "Opret {{collection}} “{{slug}}”"
+    update: "Ret {{collection}} “{{slug}}”"
+    delete: "Slet {{collection}} “{{slug}}”"
+    uploadMedia: "Upload “{{path}}”"
+    deleteMedia: "Slet “{{path}}”"
+
+media_folder: indhold/billeder
+public_folder: /billeder
+
+collections:
+  # ================================================================ TOGTER
+  - name: togter
+    label: "⛵ Togter"
+    label_singular: Togt
+    description: Opret, ret eller slet togter. Slå "Vis på hjemmesiden" fra for at skjule et togt.
+    folder: indhold/togter
+    extension: md
+    format: frontmatter
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    identifier_field: titel
+    summary: "{{titel}} · {{start}}"
+    sortable_fields: [start, titel]
+    fields:
+      - { name: titel, label: Navn på togtet, widget: string }
+      - { name: omraade, label: Område, widget: string, required: false, hint: "Fx Caribien" }
+      - { name: start, label: Startdato, widget: datetime, time_format: false, date_format: "DD-MM-YYYY", format: "YYYY-MM-DD" }
+      - { name: slut, label: Slutdato, widget: datetime, time_format: false, date_format: "DD-MM-YYYY", format: "YYYY-MM-DD" }
+      - { name: fra, label: Påmønstring (sted), widget: string, required: false }
+      - { name: til, label: Afmønstring (sted), widget: string, required: false }
+      - name: status
+        label: Status
+        widget: select
+        options: [Ledige pladser, Få pladser tilbage, Fuldt booket, Kommer snart]
+        default: Ledige pladser
+      - { name: pladser, label: Antal ledige pladser, widget: number, value_type: int, required: false }
+      - { name: billede, label: Billede, widget: image, required: false }
+      - { name: video, label: Video i toppen (valgfri .mp4), widget: file, required: false }
+      - { name: kort_beskrivelse, label: Kort beskrivelse (vises på kortet), widget: text, required: false }
+      - { name: vis, label: Vis på hjemmesiden, widget: boolean, default: true }
+      - { name: body, label: Beskrivelse af togtet, widget: markdown, required: false }
+
+  # ================================================================ SIDER
+  - name: sider
+    label: "📄 Sider"
+    files:
+      # ---------------------------------------------------------- FORSIDE
+      - name: forside
+        label: "🏠 Forside"
+        file: indhold/forside.yml
+        fields:
+          - name: top
+            label: Toppen (stort billede/video)
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: undertekst, label: Undertekst, widget: text, required: false }
+              - { name: video, label: Baggrundsvideo (.mp4 – erstatter billedet), widget: file, required: false }
+              - { name: billede, label: Baggrundsbillede, widget: image, required: false }
+              - { name: knap_tekst, label: Knap 1 tekst, widget: string, required: false }
+              - { name: knap_link, label: Knap 1 link, widget: string, required: false }
+              - { name: knap2_tekst, label: Knap 2 tekst, widget: string, required: false }
+              - { name: knap2_link, label: Knap 2 link, widget: string, required: false }
+          - name: intro
+            label: Velkomst
+            widget: object
+            fields:
+              - { name: lille_overskrift, label: Lille overskrift, widget: string, required: false }
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown, required: false }
+              - { name: billede, label: Billede, widget: image, required: false }
+              - { name: knap_tekst, label: Knap tekst, widget: string, required: false }
+              - { name: knap_link, label: Knap link, widget: string, required: false }
+          - name: kort
+            label: Store kort (genveje)
+            label_singular: Kort
+            widget: list
+            summary: "{{titel}}"
+            fields:
+              - { name: titel, label: Titel, widget: string }
+              - { name: tekst, label: Tekst, widget: text, required: false }
+              - { name: billede, label: Billede, widget: image, required: false }
+              - { name: link, label: Link, widget: string }
+          - name: togter_sektion
+            label: Togter-sektion
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: text, required: false }
+          - name: citat
+            label: Billedstribe med citat
+            widget: object
+            fields:
+              - { name: tekst, label: Citat, widget: string }
+              - { name: undertekst, label: Undertekst, widget: text, required: false }
+              - { name: billede, label: Billede, widget: image, required: false }
+              - { name: video, label: Video (valgfri .mp4), widget: file, required: false }
+          - name: sociale
+            label: Sociale medier / Instagram
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown, required: false }
+              - { name: curator_feed_id, label: Curator.io feed-id, widget: string, required: false, hint: "Fra embed-koden på curator.io: teksten mellem published/ og .js" }
+              - { name: curator_layout, label: Curator.io layout-navn, widget: string, required: false, default: new-feed-layout, hint: "Fra embed-koden: teksten efter curator-feed- i div-id\u0027et, fx new-feed-layout" }
+          - name: afslutning
+            label: Afslutning
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: text, required: false }
+
+      # ---------------------------------------------------------- BÅDEN
+      - name: baaden
+        label: "🛥 Båden"
+        file: indhold/baaden.yml
+        fields:
+          - name: top
+            label: Toppen
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: undertekst, label: Undertekst, widget: text, required: false }
+              - { name: video, label: Baggrundsvideo (.mp4), widget: file, required: false }
+              - { name: billede, label: Baggrundsbillede, widget: image, required: false }
+          - name: afsnit
+            label: Afsnit (tekst + billede)
+            label_singular: Afsnit
+            widget: list
+            summary: "{{overskrift}}"
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown }
+              - { name: billede, label: Billede, widget: image, required: false }
+          - name: indenfor
+            label: Indenfor på Mango
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown, required: false }
+              - { name: grundplan, label: Grundplan, widget: image, required: false }
+              - { name: grundplan_tekst, label: Tekst under grundplanen, widget: string, required: false }
+              - name: billeder
+                label: Billeder indefra
+                label_singular: Billede
+                widget: list
+                summary: "{{tekst}}"
+                fields:
+                  - { name: billede, label: Billede, widget: image }
+                  - { name: tekst, label: Billedtekst, widget: string, required: false }
+          - name: tal
+            label: Mango i tal
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - name: liste
+                label: Tal
+                label_singular: Linje
+                widget: list
+                summary: "{{navn}}: {{vaerdi}}"
+                fields:
+                  - { name: navn, label: Navn, widget: string }
+                  - { name: vaerdi, label: Værdi, widget: string }
+          - name: bygget
+            label: Bygget til livet på havet
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown }
+              - { name: billede, label: Billede, widget: image, required: false }
+          - name: galleri
+            label: Galleri
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - name: billeder
+                label: Billeder
+                widget: list
+                field: { name: billede, label: Billede, widget: image }
+          - name: afslutning
+            label: Afslutning
+            widget: object
+            fields:
+              - { name: tekst, label: Tekst, widget: text, required: false }
+
+      # ---------------------------------------------------------- OM OS
+      - name: omos
+        label: "👋 Om os"
+        file: indhold/om-os.yml
+        fields:
+          - name: top
+            label: Toppen
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: undertekst, label: Undertekst, widget: text, required: false }
+              - { name: video, label: Baggrundsvideo (.mp4), widget: file, required: false }
+              - { name: billede, label: Baggrundsbillede (fx jer to sammen), widget: image, required: false }
+          - name: historie
+            label: Vores historie (afsnit)
+            label_singular: Afsnit
+            widget: list
+            summary: "{{overskrift}}"
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown }
+              - { name: billede, label: Billede eller .mp4-video, widget: file, required: false }
+          - name: motto
+            label: Motto (billedstribe)
+            widget: object
+            fields:
+              - { name: tekst, label: Motto, widget: string }
+              - { name: undertekst, label: Undertekst, widget: text, required: false }
+              - { name: billede, label: Billede, widget: image, required: false }
+              - { name: video, label: Video (valgfri .mp4), widget: file, required: false }
+          - name: dykning
+            label: Dykning
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown }
+              - { name: billede, label: Billede eller .mp4-video, widget: file, required: false }
+          - name: team
+            label: Mød besætningen
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: text, required: false }
+              - name: personer
+                label: Personer
+                label_singular: Person
+                widget: list
+                summary: "{{navn}}"
+                fields:
+                  - { name: navn, label: Navn, widget: string }
+                  - { name: rolle, label: Rolle, widget: string, required: false }
+                  - { name: billede, label: Billede, widget: image, required: false }
+                  - { name: tekst, label: Tekst, widget: markdown, required: false }
+                  - name: fakta
+                    label: Fakta
+                    label_singular: Fakta
+                    widget: list
+                    summary: "{{titel}}"
+                    fields:
+                      - { name: titel, label: Titel, widget: string }
+                      - { name: tekst, label: Tekst, widget: string }
+
+      # ---------------------------------------------------------- BLIV GAST
+      - name: blivgast
+        label: "🎒 Bliv gast"
+        file: indhold/bliv-gast.yml
+        fields:
+          - name: top
+            label: Toppen
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: undertekst, label: Undertekst, widget: text, required: false }
+              - { name: video, label: Baggrundsvideo (.mp4), widget: file, required: false }
+              - { name: billede, label: Baggrundsbillede, widget: image, required: false }
+          - { name: indholdsfortegnelse_titel, label: Titel på indholdsfortegnelse, widget: string }
+          - name: livet
+            label: Livet som gast
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: fremhaevet, label: Fremhævet indledning, widget: text, required: false }
+              - { name: tekst, label: Tekst, widget: markdown }
+              - { name: billede, label: Billede, widget: image, required: false }
+          - name: faellesskab
+            label: Fællesskab og forventninger
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown }
+              - { name: fremhaevet, label: Fremhævet afslutning, widget: text, required: false }
+              - { name: billede, label: Billede, widget: image, required: false }
+          - name: oplevelser
+            label: Oplevelser og sejlads
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst (før billederne), widget: markdown }
+              - { name: billede, label: Billede 1, widget: image, required: false }
+              - { name: billede2, label: Billede 2 (eller .mp4-video), widget: file, required: false }
+              - { name: tekst2, label: Tekst (efter billederne), widget: markdown, required: false }
+          - name: sikkerhed
+            label: Sikkerhed ombord
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Tekst, widget: markdown }
+              - { name: regler_overskrift, label: Overskrift på regler, widget: string }
+              - name: regler
+                label: Regler
+                widget: list
+                field: { name: regel, label: Regel, widget: string }
+              - { name: efter_tekst, label: Tekst efter reglerne, widget: markdown, required: false }
+          - name: oekonomi
+            label: Økonomi og praktisk
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Indledning, widget: markdown }
+              - { name: priser_overskrift, label: Overskrift på prisboks, widget: string }
+              - name: priser
+                label: Priskort
+                label_singular: Priskort
+                widget: list
+                summary: "{{titel}}: {{pris}}"
+                fields:
+                  - { name: titel, label: Titel, widget: string }
+                  - { name: pris, label: Pris, widget: string }
+                  - { name: enhed, label: Under prisen (fx "pr. 30 dage"), widget: string, required: false }
+                  - { name: tekst, label: Tekst, widget: text, required: false }
+                  - name: punkter
+                    label: Punkter
+                    widget: list
+                    required: false
+                    field: { name: punkt, label: Punkt, widget: string }
+                  - { name: fremhaev, label: Fremhæv (mørkeblå), widget: boolean, default: false }
+              - { name: selv_overskrift, label: Overskrift "selv stå for", widget: string }
+              - name: selv
+                label: Det skal du selv stå for
+                label_singular: Punkt
+                widget: list
+                summary: "{{titel}}"
+                fields:
+                  - { name: titel, label: Titel, widget: string }
+                  - { name: tekst, label: Tekst, widget: text, required: false }
+                  - name: maerke
+                    label: Mærke
+                    widget: select
+                    required: false
+                    options: [Krav, Stærkt anbefalet, Anbefalet]
+              - { name: praktisk_overskrift, label: Overskrift praktisk info, widget: string }
+              - { name: praktisk, label: Praktisk info, widget: markdown }
+          - name: trin
+            label: Sådan bliver du gast
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - { name: tekst, label: Indledning, widget: markdown }
+              - name: liste
+                label: Trin
+                label_singular: Trin
+                widget: list
+                summary: "{{titel}}"
+                fields:
+                  - { name: titel, label: Titel, widget: string }
+                  - { name: tekst, label: Tekst, widget: text }
+              - { name: afslutning, label: Afslutning, widget: text, required: false }
+          - name: faq
+            label: FAQ
+            widget: object
+            fields:
+              - { name: overskrift, label: Overskrift, widget: string }
+              - name: spoergsmaal
+                label: Spørgsmål
+                label_singular: Spørgsmål
+                widget: list
+                summary: "{{spoergsmaal}}"
+                fields:
+                  - { name: spoergsmaal, label: Spørgsmål, widget: string }
+                  - { name: svar, label: Svar, widget: markdown }
+
+      # ---------------------------------------------------------- INDSTILLINGER
+      - name: indstillinger
+        label: "⚙️ Indstillinger"
+        file: indhold/indstillinger.yml
+        fields:
+          - { name: titel, label: Sidens navn, widget: string }
+          - { name: beskrivelse, label: Beskrivelse (til Google og deling), widget: text }
+          - { name: logo, label: Logo, widget: image }
+          - { name: kontakt_knap_tekst, label: Tekst på "Skriv til os"-knapper, widget: string }
+          - { name: kontakt_link, label: Link på "Skriv til os"-knapper, widget: string, hint: "Fx https://ig.me/m/sailing.mango eller mailto:jeres@mail.dk" }
+          - { name: email, label: E-mail (vises i bunden), widget: string, required: false }
+          - name: menu
+            label: Menu
+            label_singular: Menupunkt
+            widget: list
+            summary: "{{tekst}}"
+            fields:
+              - { name: tekst, label: Tekst, widget: string }
+              - { name: link, label: Link, widget: string }
+          - name: sociale_medier
+            label: Sociale medier
+            label_singular: Socialt medie
+            widget: list
+            summary: "{{navn}}"
+            fields:
+              - { name: navn, label: Navn, widget: string }
+              - { name: brugernavn, label: Brugernavn, widget: string }
+              - { name: link, label: Link, widget: string }
+          - { name: bund_tekst, label: Tekst i bunden, widget: string, required: false }

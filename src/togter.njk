@@ -1,0 +1,43 @@
+---
+layout: layouts/base.njk
+title: Togter
+permalink: /togter/
+---
+{% import "partials/macros.njk" as m with context %}
+{{ m.hero({ overskrift: "Togter", undertekst: "Find det område og den periode, der passer dig – og skriv til os.", billede: (togter[0].billede if togter.length else forside.top.billede) }) }}
+
+<section class="section" id="indhold">
+  <div class="container">
+    {% if togter.length %}
+      <div class="section__head reveal">
+        <div>
+          <h2>Overblik</h2>
+          <p>Alle kommende togter på én gang. Klik på et togt for at læse mere.</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrér togter">
+          <button class="chip is-active" data-filter="alle">Alle</button>
+          <button class="chip" data-filter="ledig">Ledige pladser</button>
+        </div>
+      </div>
+
+      <div class="timeline reveal">
+        {% for t in togter %}
+          <a class="timeline__row" href="/togter/{{ t.slug }}/" data-status="{{ t.status | statusKlasse }}">
+            <span class="timeline__date"><strong>{{ t.start | dato("kort") }}</strong> – {{ t.slut | dato("kort") }}</span>
+            <span class="timeline__title">{{ t.titel }}<small>{{ t.fra }}{% if t.til %} → {{ t.til }}{% endif %}</small></span>
+            <span class="timeline__days">{{ t.start | dage(t.slut) }} dage</span>
+            <span class="status status--{{ t.status | statusKlasse }}">{{ t.status }}</span>
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="togt-grid">
+        {% for t in togter %}<div class="reveal" data-status="{{ t.status | statusKlasse }}" style="--d:{{ (loop.index0 % 3) * 90 }}ms">{{ m.togtkort(t) }}</div>{% endfor %}
+      </div>
+    {% else %}
+      <p class="empty">Vi er ved at planlægge de næste togter. Følg med på de sociale medier, eller skriv til os!</p>
+    {% endif %}
+  </div>
+</section>
+
+{{ m.cta("Har du fundet dit togt?", "Skriv til os og fortæl lidt om dig selv – så tager vi den derfra.") }}

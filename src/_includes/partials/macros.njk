@@ -1,0 +1,93 @@
+{# Viser et billede eller en video (loop, uden lyd) afhængigt af filtypen #}
+{% macro media(src, alt="", cls="", eager=false) %}
+  {% if src %}
+    {% if src | isVideo %}
+      <video class="{{ cls }}" data-src="{{ src }}" data-lazy muted loop playsinline preload="none" aria-hidden="true"></video>
+    {% else %}
+      <img class="{{ cls }}" src="{{ src }}" alt="{{ alt }}" {% if not eager %}loading="lazy"{% endif %} decoding="async">
+    {% endif %}
+  {% else %}
+    <div class="{{ cls }} media-placeholder" aria-hidden="true"><span>🥭</span></div>
+  {% endif %}
+{% endmacro %}
+
+{# Stor topsektion med billede eller video i baggrunden #}
+{% macro hero(h, size="lille", knapper=false) %}
+  <section class="hero hero--{{ size }}">
+    <div class="hero__media">
+      {% if h.video %}
+        <video src="{{ h.video }}" {% if h.billede %}poster="{{ h.billede }}"{% endif %} autoplay muted loop playsinline aria-hidden="true"></video>
+      {% elif h.billede %}
+        <img class="kenburns" src="{{ h.billede }}" alt="" fetchpriority="high">
+      {% endif %}
+    </div>
+    <div class="hero__shade"></div>
+    <div class="hero__content container">
+      <h1>{{ h.overskrift | mdInline | safe }}</h1>
+      {% if h.undertekst %}<p class="hero__sub">{{ h.undertekst | mdInline | safe }}</p>{% endif %}
+      {% if knapper and (h.knap_tekst or h.knap2_tekst) %}
+        <div class="hero__buttons">
+          {% if h.knap_tekst %}<a class="btn btn--mango" href="{{ h.knap_link }}">{{ h.knap_tekst }}</a>{% endif %}
+          {% if h.knap2_tekst %}<a class="btn btn--ghost" href="{{ h.knap2_link }}">{{ h.knap2_tekst }}</a>{% endif %}
+        </div>
+      {% endif %}
+    </div>
+    {% if size == "stor" %}<a class="hero__scroll" href="#indhold" aria-label="Scroll ned"><span></span></a>{% endif %}
+    <svg class="hero__wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true"><path d="M0,40 C240,80 480,0 720,30 C960,60 1200,20 1440,40 L1440,80 L0,80 Z"/></svg>
+  </section>
+{% endmacro %}
+
+{# Bred billedstribe med et citat ovenpå #}
+{% macro baand(b) %}
+  <section class="band">
+    <div class="band__media">{{ media(b.video or b.billede, "", "") }}</div>
+    <div class="band__shade"></div>
+    <div class="band__content container reveal">
+      <p class="band__quote">“{{ b.tekst }}”</p>
+      {% if b.undertekst %}<p class="band__sub">{{ b.undertekst }}</p>{% endif %}
+    </div>
+  </section>
+{% endmacro %}
+
+{# Kort til et togt #}
+{% macro togtkort(t) %}
+  <a class="togt-card" href="/togter/{{ t.slug }}/">
+    <div class="togt-card__img">
+      {{ media(t.billede, t.titel) }}
+      {% if t.status %}<span class="status status--{{ t.status | statusKlasse }}">{{ t.status }}</span>{% endif %}
+    </div>
+    <div class="togt-card__body">
+      {% if t.omraade %}<p class="eyebrow">{{ t.omraade }}</p>{% endif %}
+      <h3>{{ t.titel }}</h3>
+      <p class="togt-card__dates">{{ t.start | dato("kort") }} – {{ t.slut | dato }}</p>
+      <ul class="togt-card__meta">
+        {% if t.start and t.slut %}<li>⏱ {{ t.start | dage(t.slut) }} dage</li>{% endif %}
+        {% if t.fra %}<li>⚓ {{ t.fra }}{% if t.til %} → {{ t.til }}{% endif %}</li>{% endif %}
+      </ul>
+      {% if t.kort_beskrivelse %}<p class="togt-card__desc">{{ t.kort_beskrivelse }}</p>{% endif %}
+      <span class="link-arrow">Se togtet</span>
+    </div>
+  </a>
+{% endmacro %}
+
+{# Afsnit med tekst og billede ved siden af hinanden #}
+{% macro split(a, flip=false) %}
+  <div class="split {% if flip %}split--flip{% endif %} reveal">
+    <div class="split__text">
+      {% if a.overskrift %}<h2>{{ a.overskrift }}</h2>{% endif %}
+      <div class="prose">{{ a.tekst | md | safe }}</div>
+    </div>
+    <div class="split__media">{{ media(a.billede, a.overskrift) }}</div>
+  </div>
+{% endmacro %}
+
+{% macro cta(overskrift, tekst) %}
+  <section class="cta">
+    <div class="container cta__inner reveal">
+      <h2>{{ overskrift }}</h2>
+      {% if tekst %}<p>{{ tekst }}</p>{% endif %}
+      <a class="btn btn--mango btn--big" href="{{ site.kontakt_link }}" target="_blank" rel="noopener">{{ site.kontakt_knap_tekst or "Skriv til os" }}</a>
+      {% if site.email %}<p class="cta__mail">eller skriv til <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>{% endif %}
+    </div>
+  </section>
+{% endmacro %}

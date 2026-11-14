@@ -1,0 +1,47 @@
+---
+layout: layouts/base.njk
+title: Om os
+permalink: /om-os/
+---
+{% import "partials/macros.njk" as m with context %}
+{{ m.hero(omos.top) }}
+
+<section class="section" id="indhold">
+  <div class="container stack">
+    {% for a in omos.historie %}{{ m.split(a, loop.index0 % 2) }}{% endfor %}
+  </div>
+</section>
+
+{{ m.baand(omos.motto) }}
+
+<section class="section">
+  <div class="container">{{ m.split(omos.dykning, true) }}</div>
+</section>
+
+<section class="section section--sand">
+  <div class="container">
+    <div class="center narrow reveal">
+      <h2>{{ omos.team.overskrift }}</h2>
+      <p class="lead">{{ omos.team.tekst }}</p>
+    </div>
+    <div class="team">
+      {% for p in omos.team.personer %}
+        <article class="person reveal" style="--d:{{ loop.index0 * 120 }}ms">
+          <div class="person__img">{{ m.media(p.billede, p.navn) }}</div>
+          <div class="person__body">
+            <h3>{{ p.navn }}</h3>
+            {% if p.rolle %}<p class="eyebrow">{{ p.rolle }}</p>{% endif %}
+            {% if p.tekst %}<div class="prose">{{ p.tekst | md | safe }}</div>{% endif %}
+            {% if p.fakta.length %}
+              <dl class="person__facts">
+                {% for f in p.fakta %}<div><dt>{{ f.titel }}</dt><dd>{{ f.tekst }}</dd></div>{% endfor %}
+              </dl>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ m.cta("Har du lyst til at sejle med os?", "Vi glæder os til at høre fra dig.") }}

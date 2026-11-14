@@ -1,0 +1,68 @@
+top:
+  overskrift: Om os
+  undertekst: Vi er Tobias og Dave – to sejlere, der mødtes i Stillehavet og drømte videre.
+  video: ""
+  billede: /billeder/tobias-og-dave-bord.jpg
+
+historie:
+  - overskrift: Det startede i Fransk Polynesien
+    tekst: |
+      Vi er Tobias og Dave, og vores historie sammen begyndte på en båd i Fransk Polynesien. Her sejlede vi sammen i et par måneder, inden vi hver især fortsatte som skippere på to både, der sejlede side om side. Dave tilbragte i alt ni måneder på havet i Stillehavet, mens jeg selv nåede knap otte måneder, før turen gik hjem til Danmark.
+
+      Efter Stillehavet tog Dave videre til Middelhavet, hvor han arbejdede på luksusyachts som deckhand og chaseboat-skipper. Jeg tog hjem til Danmark omkring tre måneder senere og begyndte for alvor forberedelserne til den tur, vi er på nu.
+
+      Men idéen om at sejle ud i verden opstod faktisk flere år tidligere. For omkring fire år siden begyndte drømmen om langturssejlads for alvor at tage form, så forberedelserne til Mango har været undervejs længe før, vi overhovedet mødte hinanden.
+    billede: /billeder/tobias-og-dave-selfie.jpg
+  - overskrift: Oplevelser er bedst, når de deles
+    tekst: |
+      Noget af det, vi elsker mest ved at være afsted, er muligheden for at dele oplevelserne med andre. Det er én ting at opleve et fantastisk sted selv – noget helt andet er at kunne vende sig om og se smilet og begejstringen hos dem, man har med ombord.
+
+      Vi synes også, at havet er en fantastisk måde at opleve verden på. Når man rejser fra ø til ø med egen båd, oplever man stederne fra en helt anden side end på en klassisk ferie. Vi kommer uden om de typiske turistfælder og har friheden til selv at bestemme tempoet. Hvis et sted ikke siger os noget, kan vi sejle videre. Hvis vi finder en lille bugt, et godt dykkersted eller et sted, vi bare ikke har lyst til at forlade, kan vi blive lidt længere.
+    billede: /billeder/vandretur.mp4
+  - overskrift: Sikkerhed først – stemning lige bagefter
+    tekst: |
+      For os er sikkerheden altid det vigtigste ombord. Men lige efter den kommer stemningen. For os handler en god tur ikke kun om vejret, destinationerne eller hvor mange sømil vi får sejlet – den handler mere om de mennesker, man deler den med, de minder, man tager med sig, og de nye venner, man har fået på vejen.
+    billede: /billeder/tobias-og-dave-bora-bora.jpg
+
+motto:
+  tekst: Husk hyggen
+  undertekst: Derfor gør vi vores bedste for at skabe god energi ombord, også når vejret er elendigt, motoren driller, eller dagen ikke helt går efter planen. Vi prøver at vende det negative til noget positivt og huske, at vi trods alt befinder os på en sejlbåd et eller andet fantastisk sted i verden.
+  billede: /billeder/strand-trae.jpg
+  video: /billeder/sandbanke-drone.mp4
+
+dykning:
+  overskrift: Vores fælles passion – dykning
+  tekst: |
+    En af de passioner, vi deler, er dykning. Vi elsker at hoppe i vandet og opdage nye spots, og vi glæder os til at se, hvor mange nye steder vi kan få under finnerne på vores vej gennem verden.
+  billede: /billeder/dyk-hajer.mp4
+
+team:
+  overskrift: Mød besætningen
+  tekst: Selvom vi deler mange af de samme interesser, er vi også forskellige. Her kan du lære lidt mere om os hver især – vores erfaringer, certifikater, interesser, personligheder og selvfølgelig en fun fact.
+  personer:
+    - navn: Dave
+      rolle: Skipper
+      billede: /billeder/dave.jpg
+      tekst: More to come…
+      fakta:
+        - titel: Erfaring
+          tekst: Kommer snart
+        - titel: Certifikater
+          tekst: Kommer snart
+        - titel: Interesser
+          tekst: Kommer snart
+        - titel: Fun fact
+          tekst: Kommer snart
+    - navn: Tobias
+      rolle: Skipper
+      billede: /billeder/tobias.jpg
+      tekst: More to come…
+      fakta:
+        - titel: Erfaring
+          tekst: Kommer snart
+        - titel: Certifikater
+          tekst: Kommer snart
+        - titel: Interesser
+          tekst: Kommer snart
+        - titel: Fun fact
+          tekst: Kommer snart

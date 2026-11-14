@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if title %}{{ title }} · {% endif %}{{ site.titel }}</title>
+  <meta name="description" content="{{ description or site.beskrivelse }}">
+  <meta property="og:title" content="{% if title %}{{ title }} · {% endif %}{{ site.titel }}">
+  <meta property="og:description" content="{{ description or site.beskrivelse }}">
+  {% if ogImage %}<meta property="og:image" content="{{ ogImage }}">{% endif %}
+  <link rel="icon" href="/billeder/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&family=Caveat:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="page-{{ bodyClass or 'side' }}">
+  <a class="skip" href="#indhold">Spring til indhold</a>
+  <header class="header" id="top">
+    <div class="header__inner container">
+      <a class="header__logo" href="/" aria-label="{{ site.titel }} – forside">
+        <img src="{{ site.logo }}" alt="{{ site.titel }}">
+      </a>
+      <button class="header__toggle" aria-expanded="false" aria-controls="menu" aria-label="Menu"><span></span><span></span><span></span></button>
+      <nav class="header__nav" id="menu">
+        {% for punkt in site.menu %}
+          <a href="{{ punkt.link }}" class="{% if page.url == punkt.link %}active{% endif %}{% if loop.last %} nav-cta{% endif %}">{{ punkt.tekst }}</a>
+        {% endfor %}
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="footer">
+    <svg class="footer__wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,30 C360,60 720,0 1080,30 C1260,45 1380,35 1440,30 L1440,0 L0,0 Z"/></svg>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="{{ site.logo }}" alt="{{ site.titel }}">
+        <p class="footer__motto">{{ site.bund_tekst }}</p>
+      </div>
+      <nav class="footer__nav" aria-label="Sider">
+        <a href="/">Forside</a>
+        {% for punkt in site.menu %}<a href="{{ punkt.link }}">{{ punkt.tekst }}</a>{% endfor %}
+      </nav>
+      <div class="footer__social">
+        <p class="footer__label">Følg med</p>
+        {% for s in site.sociale_medier %}
+          <a href="{{ s.link }}" target="_blank" rel="noopener">{{ s.navn }} <span>{{ s.brugernavn }}</span></a>
+        {% endfor %}
+        {% if site.email %}<a href="mailto:{{ site.email }}">{{ site.email }}</a>{% endif %}
+      </div>
+    </div>
+    <p class="footer__copy container">© {% year %} {{ site.titel }}</p>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+top:
+  overskrift: Båden
+  undertekst: Mango er både vores eventyrskane, mindemagnet og det perfekte værested for os under hele rejsen.
+  video: /billeder/mango-rev-drone.mp4
+  billede: /billeder/mango-rev-poster.jpg
+
+afsnit:
+  - overskrift: Plads til at bo sammen
+    tekst: |
+      Hun er en tysk-bygget 50-fods sejlbåd, lavet til netop den måde, vi sejler hende på. Med en længde på 15 meter er der plads til, at vi kan bo mange mennesker sammen i længere tid uden at føle, at vi sidder oven på hinanden hele tiden.
+
+      Der er fem kahytter, tre toiletter og masser af plads til både fællesskab og de øjeblikke, hvor man bare gerne vil finde et roligt hjørne med en bog.
+    billede: /billeder/mango-daek.jpg
+  - overskrift: Bygget til at føle sig tryg
+    tekst: |
+      Da vi kiggede efter den rette båd, gik vi efter en båd, vi ville føle os trygge i – og med den måde Mango er bygget på, sover vi godt om natten, selv på længere sejladser.
+
+      Båden er konstrueret med et håndlamineret skrog, solid laminat under vandlinjen og sandwichkonstruktion over vandlinjen. I stævnen er skroget desuden forstærket med Kevlar – en detalje, der er rar at vide, når man skal tilbringe mange timer på havet. Mango har en tung bly-køl, som giver stabilitet i bølger.
+    billede: /billeder/mango-havn.jpg
+  - overskrift: Selvforsynende ude på havet
+    tekst: |
+      Mango har derudover en opgraderet udstyrspakke, som gør livet ombord til en fornøjelse. Med en stor lithium-batteribank og 2.800 W solceller kan vi producere vores egen strøm uden at skulle være nervøse for ikke at kunne lade vores devices, når solen ikke skinner.
+
+      Vores watermaker, som laver saltvand om til drikkevand, gør, at vi kan ligge fredeligt ved øde ankerbugter og øer uden at stresse over at skulle i land og tanke op. Alle kahytter har fungerende stikkontakter og faste blæsere i topkvalitet – en af de mange opgraderinger, vi ikke er gået på kompromis med.
+    billede: /billeder/mango-drone.jpg
+  - overskrift: Dinghyen – vores lille bil
+    tekst: |
+      Og så har vi en dinghy med 20 hk motor. Det lyder måske som en lille detalje, men når vi ligger for anker 95 % af tiden, bliver den hurtigt til vores lille bil – den bringer os i land, ud til snorkelsteder, på indkøb, på dinghy-dates og på opdagelse i de små bugter omkring os.
+    billede: /billeder/mango-dinghy.jpg
+
+indenfor:
+  overskrift: Indenfor på Mango
+  tekst: |
+    Under dæk er der fem kahytter, tre toiletter, en stor salon og en gang med vaskemaskine. Mahognien og teak-gulvet giver en hyggelig stemning, og der er plads til både fællesskab og ro.
+  grundplan: /billeder/grundplan.jpg
+  grundplan_tekst: Grundplan over Mango – fem kahytter, tre toiletter og en stor salon midt i båden.
+  billeder:
+    - billede: /billeder/inde-salon.jpg
+      tekst: Salonen – her spiser vi, spiller spil og planlægger næste destination
+    - billede: /billeder/inde-gang.jpg
+      tekst: Gangen mod forkahytten (med vaskemaskine!)
+    - billede: /billeder/inde-kahyt-for.jpg
+      tekst: Forkahytten
+    - billede: /billeder/inde-kahyt-for-2.jpg
+      tekst: Forkahytten med skab og siddeplads
+    - billede: /billeder/inde-kahyt-koejer.jpg
+      tekst: Kahyt med køjer
+    - billede: /billeder/inde-toilet.jpg
+      tekst: Et af de tre elektriske toiletter
+    - billede: /billeder/inde-toilet-2.jpg
+      tekst: Toilet med håndvask og skabsplads
+    - billede: /billeder/inde-proviant.jpg
+      tekst: Proviantrum og fryser
+
+tal:
+  overskrift: Mango i tal
+  liste:
+    - navn: Model
+      vaerdi: Bavaria 50
+    - navn: Årgang
+      vaerdi: "2001"
+    - navn: Længde
+      vaerdi: 14,98 m skrog / ca. 15,4 m overalt
+    - navn: Bredde
+      vaerdi: 4,55 m
+    - navn: Køl
+      vaerdi: Bly, ca. 5.000 kg
+    - navn: Kabiner
+      vaerdi: "5"
+    - navn: Toiletter
+      vaerdi: 3 elektriske
+    - navn: Watermaker
+      vaerdi: 140 liter/time
+    - navn: Solceller
+      vaerdi: 2.800 W
+    - navn: Batteribank
+      vaerdi: 1.200 Ah lithium
+    - navn: Dinghy
+      vaerdi: Med 20 hk påhængsmotor
+
+bygget:
+  overskrift: Bygget til livet på havet
+  tekst: |
+    Mango er ikke en luksusyacht, og det er heller ikke meningen. Der kommer saltvand på dækket, sand på gulvet, og ting kan gå i stykker. Vi passer på båden så godt, vi kan, men vi ved også godt, at båden og udstyret er til for at blive brugt – så vi behandler den ikke som et museumsskib.
+
+    Mango er altså vores flydende og selvforsynende hjem med plads til hele besætningen og en garanti for hyggelige stunder og minder, man ikke glemmer. Den skaber de perfekte rammer for vores ønske om at have sikkerheden i orden og humøret i top.
+  billede: /billeder/mango-sejler.jpg
+
+galleri:
+  overskrift: Billeder fra båden
+  billeder:
+    - /billeder/mango-sejler-bred.jpg
+    - /billeder/mango-drone.jpg
+    - /billeder/mango-daek.jpg
+    - /billeder/mango-havn.jpg
+    - /billeder/mango-sejler.jpg
+    - /billeder/mango-dinghy.jpg
+
+afslutning:
+  tekst: Har du spørgsmål til båden eller andet, er du mere end velkommen til at spørge os 😊

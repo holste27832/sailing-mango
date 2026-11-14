@@ -1,0 +1,58 @@
+top:
+  overskrift: Kom med ombord på Mango
+  undertekst: Fra ø til ø med dykning, øde ankerbugter, solnedgange og et fællesskab, du sent glemmer.
+  # Upload en kort .mp4-video for "levende baggrund". Er feltet tomt, bruges billedet.
+  video: /billeder/forside-drone.mp4
+  billede: /billeder/forside-drone-poster.jpg
+  knap_tekst: Se kommende togter
+  knap_link: /togter/
+  knap2_tekst: Bliv gast
+  knap2_link: /bliv-gast/
+
+intro:
+  lille_overskrift: Hej og velkommen
+  overskrift: Vi er Tobias og Dave – og det her er Mango
+  tekst: |
+    Vores historie begyndte på en båd i Fransk Polynesien. Nu sejler vi ud i verden på vores egen båd og vil rigtig gerne dele eventyret med dig.
+
+    Ombord på Mango handler det om sikkerheden i orden, humøret i top og de mennesker, man deler turen med. Du behøver ikke have sejlet før – du skal bare have lyst til at være med.
+  billede: /billeder/tobias-og-dave-bro.jpg
+  knap_tekst: Mød os
+  knap_link: /om-os/
+
+kort:
+  - titel: Togter
+    tekst: Find det område og den periode, der passer dig.
+    billede: /billeder/palmeoe.jpg
+    link: /togter/
+  - titel: Båden
+    tekst: 50 fod, fem kahytter, watermaker og en dinghy, der er vores lille bil.
+    billede: /billeder/mango-sejler.jpg
+    link: /baaden/
+  - titel: Livet som gast
+    tekst: Hvad betyder det at være gast på Mango? Her er alt, du skal vide.
+    billede: /billeder/palmer.jpg
+    link: /bliv-gast/
+
+togter_sektion:
+  overskrift: Kommende togter
+  tekst: Swipe dig igennem og find det togt, du har i sigte.
+
+citat:
+  tekst: Husk hyggen
+  undertekst: Vores lille motto – også når vejret driller, eller motoren laver sjov.
+  billede: /billeder/mango-sejler-bred.jpg
+  video: /billeder/mango-sejler-klip.mp4
+
+sociale:
+  overskrift: Få indblik i hverdagen
+  tekst: |
+    Er du nysgerrig på, hvordan livet ser ud ombord på Mango med os? Du kan følge med i det hele på vores sociale medier – fra sejlads, dykning og nye destinationer til hyggelige stunder og ting, der går galt. Vi deler vores oplevelser og erfaringer, uanset hvor i verden vi befinder os. Vi håber, du vil følge med.
+  # Fra embed-koden på curator.io: id'et står i ".../published/<ID>.js"
+  curator_feed_id: 17ce29d6-d3d2-4c9c-8e99-f91ba59f2e4d
+  # Layout-navnet står i <div id="curator-feed-<LAYOUT>">
+  curator_layout: new-feed-layout
+
+afslutning:
+  overskrift: Har du lyst til at blive en del af Mango?
+  tekst: Så skriv til os. Vi glæder os til at høre fra dig!

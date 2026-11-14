@@ -1,0 +1,91 @@
+---
+layout: layouts/base.njk
+bodyClass: forside
+permalink: /
+---
+{% import "partials/macros.njk" as m with context %}
+{{ m.hero(forside.top, "stor", true) }}
+
+<section class="section" id="indhold">
+  <div class="container">
+    <div class="split reveal">
+      <div class="split__text">
+        {% if forside.intro.lille_overskrift %}<p class="eyebrow script">{{ forside.intro.lille_overskrift }}</p>{% endif %}
+        <h2>{{ forside.intro.overskrift }}</h2>
+        <div class="prose">{{ forside.intro.tekst | md | safe }}</div>
+        {% if forside.intro.knap_tekst %}<a class="btn btn--navy" href="{{ forside.intro.knap_link }}">{{ forside.intro.knap_tekst }}</a>{% endif %}
+      </div>
+      <div class="split__media split__media--tilt">{{ m.media(forside.intro.billede, forside.intro.overskrift) }}</div>
+    </div>
+  </div>
+</section>
+
+{% if forside.kort and forside.kort.length %}
+<section class="section section--sand">
+  <div class="container">
+    <div class="tiles">
+      {% for k in forside.kort %}
+        <a class="tile reveal" href="{{ k.link }}" style="--d:{{ loop.index0 * 90 }}ms">
+          {{ m.media(k.billede, k.titel) }}
+          <div class="tile__text">
+            <h3>{{ k.titel }}</h3>
+            <p>{{ k.tekst }}</p>
+            <span class="link-arrow">Læs mere</span>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if togter.length %}
+<section class="section">
+  <div class="container">
+    <div class="section__head reveal">
+      <div>
+        <h2>{{ forside.togter_sektion.overskrift }}</h2>
+        <p>{{ forside.togter_sektion.tekst }}</p>
+      </div>
+      <div class="carousel-nav">
+        <button class="round-btn" data-carousel-prev aria-label="Forrige">←</button>
+        <button class="round-btn" data-carousel-next aria-label="Næste">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="carousel" data-carousel>
+    {% for t in togter %}{{ m.togtkort(t) }}{% endfor %}
+  </div>
+  <div class="container center"><a class="btn btn--navy" href="/togter/">Se alle togter</a></div>
+</section>
+{% endif %}
+
+{{ m.baand(forside.citat) }}
+
+<section class="section" id="sociale">
+  <div class="container">
+    <div class="social-head reveal">
+      <h2>{{ forside.sociale.overskrift }}</h2>
+      <div class="prose">{{ forside.sociale.tekst | md | safe }}</div>
+      <div class="social-buttons">
+        {% for s in site.sociale_medier %}
+          <a class="social-btn social-btn--{{ s.navn | slugify2 }}" href="{{ s.link }}" target="_blank" rel="noopener"><strong>{{ s.navn }}</strong> <span>{{ s.brugernavn }}</span></a>
+        {% endfor %}
+      </div>
+    </div>
+    {% if forside.sociale.curator_feed_id %}
+      <div id="curator-feed-{{ forside.sociale.curator_layout or 'default-feed-layout' }}" class="curator"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+      <script>
+        (function(){var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+        i.src="https://cdn.curator.io/published/{{ forside.sociale.curator_feed_id }}.js";
+        e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);})();
+      </script>
+    {% else %}
+      <div class="insta-placeholder reveal" aria-label="Her kommer Instagram-feedet">
+        {% for img in baaden.galleri.billeder %}{% if loop.index <= 6 %}<a href="{{ site.sociale_medier[0].link }}" target="_blank" rel="noopener">{{ m.media(img, "") }}</a>{% endif %}{% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{{ m.cta(forside.afslutning.overskrift, forside.afslutning.tekst) }}

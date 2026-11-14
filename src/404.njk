@@ -1,0 +1,8 @@
+---
+layout: layouts/base.njk
+title: Siden findes ikke
+permalink: /404.html
+---
+{% import "partials/macros.njk" as m with context %}
+{{ m.hero({ overskrift: "Ups – vi er sejlet forkert", undertekst: "Den side findes ikke (længere).", billede: forside.top.billede }) }}
+<section class="section center"><a class="btn btn--navy" href="/">Tilbage til forsiden</a></section>

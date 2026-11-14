@@ -1,0 +1,134 @@
+---
+layout: layouts/base.njk
+title: Bliv gast
+permalink: /bliv-gast/
+---
+{% import "partials/macros.njk" as m with context %}
+{% set b = blivgast %}
+{{ m.hero(b.top) }}
+
+{% set toc = [
+  ["livet", b.livet.overskrift, "☀️"],
+  ["faellesskab", b.faellesskab.overskrift, "🤝"],
+  ["oplevelser", b.oplevelser.overskrift, "🐢"],
+  ["sikkerhed", b.sikkerhed.overskrift, "🛟"],
+  ["oekonomi", b.oekonomi.overskrift, "💰"],
+  ["saadan", b.trin.overskrift, "✍️"],
+  ["faq", b.faq.overskrift, "❓"]
+] %}
+
+<div class="guide container" id="indhold">
+  <nav class="toc" aria-label="Indholdsfortegnelse">
+    <p class="toc__title">{{ b.indholdsfortegnelse_titel }}</p>
+    <ul>
+      {% for t in toc %}<li><a href="#{{ t[0] }}" data-toc="{{ t[0] }}"><span aria-hidden="true">{{ t[2] }}</span>{{ t[1] }}</a></li>{% endfor %}
+    </ul>
+  </nav>
+
+  <div class="guide__content">
+
+    <section class="guide-section" id="livet">
+      <h2>{{ b.livet.overskrift }}</h2>
+      {% if b.livet.fremhaevet %}<p class="lead lead--script">{{ b.livet.fremhaevet }}</p>{% endif %}
+      <figure class="guide-img reveal">{{ m.media(b.livet.billede, "") }}</figure>
+      <div class="prose">{{ b.livet.tekst | md | safe }}</div>
+    </section>
+
+    <section class="guide-section" id="faellesskab">
+      <h2>{{ b.faellesskab.overskrift }}</h2>
+      <div class="prose">{{ b.faellesskab.tekst | md | safe }}</div>
+      <figure class="guide-img reveal">{{ m.media(b.faellesskab.billede, "") }}</figure>
+      {% if b.faellesskab.fremhaevet %}<p class="pull reveal">{{ b.faellesskab.fremhaevet }}</p>{% endif %}
+    </section>
+
+    <section class="guide-section" id="oplevelser">
+      <h2>{{ b.oplevelser.overskrift }}</h2>
+      <div class="prose">{{ b.oplevelser.tekst | md | safe }}</div>
+      <div class="duo reveal">
+        {{ m.media(b.oplevelser.billede, "") }}
+        {{ m.media(b.oplevelser.billede2, "") }}
+      </div>
+      <div class="prose">{{ b.oplevelser.tekst2 | md | safe }}</div>
+    </section>
+
+    <section class="guide-section" id="sikkerhed">
+      <h2>{{ b.sikkerhed.overskrift }}</h2>
+      <div class="prose">{{ b.sikkerhed.tekst | md | safe }}</div>
+      {% if b.sikkerhed.regler.length %}
+        <div class="rules reveal">
+          <h3>{{ b.sikkerhed.regler_overskrift }}</h3>
+          <ul>{% for r in b.sikkerhed.regler %}<li>{{ r | mdInline | safe }}</li>{% endfor %}</ul>
+        </div>
+      {% endif %}
+      {% if b.sikkerhed.efter_tekst %}<div class="prose">{{ b.sikkerhed.efter_tekst | md | safe }}</div>{% endif %}
+    </section>
+
+    <section class="guide-section" id="oekonomi">
+      <h2>{{ b.oekonomi.overskrift }}</h2>
+      <div class="prose">{{ b.oekonomi.tekst | md | safe }}</div>
+
+      <div class="prices-wrap reveal">
+        <h3 class="prices-title">{{ b.oekonomi.priser_overskrift }}</h3>
+        <div class="prices">
+          {% for p in b.oekonomi.priser %}
+            <div class="price {% if p.fremhaev %}price--featured{% endif %}">
+              <p class="price__label">{{ p.titel }}</p>
+              <p class="price__amount">{{ p.pris }}</p>
+              <p class="price__unit">{{ p.enhed }}</p>
+              {% if p.tekst %}<p class="price__text">{{ p.tekst }}</p>{% endif %}
+              {% if p.punkter.length %}<ul>{% for x in p.punkter %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if b.oekonomi.selv.length %}
+        <div class="own reveal">
+          <h3>{{ b.oekonomi.selv_overskrift }}</h3>
+          <ul class="own__list">
+            {% for s in b.oekonomi.selv %}
+              <li>
+                <div class="own__head"><strong>{{ s.titel }}</strong>{% if s.maerke %}<span class="tag tag--{{ 'krav' if s.maerke == 'Krav' else 'anbefalet' }}">{{ s.maerke }}</span>{% endif %}</div>
+                {% if s.tekst %}<p>{{ s.tekst }}</p>{% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      {% if b.oekonomi.praktisk %}
+        <h3>{{ b.oekonomi.praktisk_overskrift }}</h3>
+        <div class="prose">{{ b.oekonomi.praktisk | md | safe }}</div>
+      {% endif %}
+    </section>
+
+    <section class="guide-section" id="saadan">
+      <h2>{{ b.trin.overskrift }}</h2>
+      <div class="prose">{{ b.trin.tekst | md | safe }}</div>
+      <ol class="steps">
+        {% for s in b.trin.liste %}
+          <li class="step reveal" style="--d:{{ loop.index0 * 80 }}ms">
+            <span class="step__num">{{ loop.index }}</span>
+            <div><h3>{{ s.titel }}</h3><p>{{ s.tekst }}</p></div>
+          </li>
+        {% endfor %}
+      </ol>
+      {% if b.trin.afslutning %}<p class="lead">{{ b.trin.afslutning }}</p>{% endif %}
+      <a class="btn btn--mango btn--big" href="{{ site.kontakt_link }}" target="_blank" rel="noopener">{{ site.kontakt_knap_tekst }}</a>
+    </section>
+
+    <section class="guide-section" id="faq">
+      <h2>{{ b.faq.overskrift }}</h2>
+      <div class="faq">
+        {% for q in b.faq.spoergsmaal %}
+          <details class="faq__item">
+            <summary>{{ q.spoergsmaal }}</summary>
+            <div class="prose">{{ q.svar | md | safe }}</div>
+          </details>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+</div>
+
+{{ m.cta("Har du lyst til at blive en del af Mango?", "Så skriv til os. Vi glæder os til at høre fra dig!") }}

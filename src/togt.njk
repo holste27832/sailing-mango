@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+pagination:
+  data: togter
+  size: 1
+  alias: togt
+permalink: "/togter/{{ togt.slug }}/"
+eleventyComputed:
+  title: "{{ togt.titel }}"
+  description: "{{ togt.kort_beskrivelse }}"
+---
+{% import "partials/macros.njk" as m with context %}
+{{ m.hero({ overskrift: togt.titel, undertekst: togt.kort_beskrivelse, billede: togt.billede, video: togt.video }) }}
+
+<section class="section" id="indhold">
+  <div class="container togt-detail">
+    <aside class="togt-facts reveal">
+      {% if togt.status %}<span class="status status--{{ togt.status | statusKlasse }}">{{ togt.status }}</span>{% endif %}
+      <dl>
+        {% if togt.omraade %}<div><dt>Område</dt><dd>{{ togt.omraade }}</dd></div>{% endif %}
+        <div><dt>Periode</dt><dd>{{ togt.start | dato }} – {{ togt.slut | dato }}</dd></div>
+        <div><dt>Varighed</dt><dd>{{ togt.start | dage(togt.slut) }} dage</dd></div>
+        {% if togt.fra %}<div><dt>Påmønstring</dt><dd>{{ togt.fra }}</dd></div>{% endif %}
+        {% if togt.til %}<div><dt>Afmønstring</dt><dd>{{ togt.til }}</dd></div>{% endif %}
+        {% if togt.pladser %}<div><dt>Ledige pladser</dt><dd>{{ togt.pladser }}</dd></div>{% endif %}
+      </dl>
+      <a class="btn btn--mango" href="{{ site.kontakt_link }}" target="_blank" rel="noopener">{{ site.kontakt_knap_tekst }}</a>
+      <a class="link-arrow" href="/bliv-gast/#oekonomi">Se priser og praktisk info</a>
+    </aside>
+    <div class="prose prose--big reveal">
+      {{ togt.body | md | safe }}
+    </div>
+  </div>
+  <div class="container center"><a class="btn btn--ghost-dark" href="/togter/">← Alle togter</a></div>
+</section>
