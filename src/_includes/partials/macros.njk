@@ -2,7 +2,7 @@
 {% macro media(src, alt="", cls="", eager=false) %}
   {% if src %}
     {% if src | isVideo %}
-      <video class="{{ cls }}" data-src="{{ src }}" data-lazy muted loop playsinline preload="none" aria-hidden="true"></video>
+      <video class="{{ cls }}" data-src="{{ src | url }}" data-lazy muted loop playsinline preload="none" aria-hidden="true"></video>
     {% else %}
       <img class="{{ cls }}" src="{{ src }}" alt="{{ alt }}" {% if not eager %}loading="lazy"{% endif %} decoding="async">
     {% endif %}

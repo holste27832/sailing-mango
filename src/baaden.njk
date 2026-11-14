@@ -21,7 +21,7 @@ permalink: /baaden/
     </div>
     {% if baaden.indenfor.grundplan %}
       <figure class="floorplan reveal">
-        <button class="floorplan__btn" data-lightbox="{{ baaden.indenfor.grundplan }}" aria-label="Vis grundplanen større">{{ m.media(baaden.indenfor.grundplan, "Grundplan over Mango") }}</button>
+        <button class="floorplan__btn" data-lightbox="{{ baaden.indenfor.grundplan | url }}" aria-label="Vis grundplanen større">{{ m.media(baaden.indenfor.grundplan, "Grundplan over Mango") }}</button>
         {% if baaden.indenfor.grundplan_tekst %}<figcaption>{{ baaden.indenfor.grundplan_tekst }}</figcaption>{% endif %}
       </figure>
     {% endif %}
@@ -29,7 +29,7 @@ permalink: /baaden/
       <div class="interior">
         {% for b in baaden.indenfor.billeder %}
           <figure class="interior__item reveal{% if loop.first %} interior__item--big{% endif %}" style="--d:{{ (loop.index0 % 4) * 70 }}ms">
-            <button data-lightbox="{{ b.billede }}" aria-label="Vis billede større">{{ m.media(b.billede, b.tekst) }}</button>
+            <button data-lightbox="{{ b.billede | url }}" aria-label="Vis billede større">{{ m.media(b.billede, b.tekst) }}</button>
             {% if b.tekst %}<figcaption>{{ b.tekst }}</figcaption>{% endif %}
           </figure>
         {% endfor %}
@@ -67,7 +67,7 @@ permalink: /baaden/
     <h2 class="center reveal">{{ baaden.galleri.overskrift }}</h2>
     <div class="gallery">
       {% for img in baaden.galleri.billeder %}
-        <button class="gallery__item reveal" data-lightbox="{{ img }}" aria-label="Vis billede større">{{ m.media(img, "") }}</button>
+        <button class="gallery__item reveal" data-lightbox="{{ img | url }}" aria-label="Vis billede større">{{ m.media(img, "") }}</button>
       {% endfor %}
     </div>
   </div>
