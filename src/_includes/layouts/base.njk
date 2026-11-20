@@ -39,7 +39,10 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <img src="{{ site.logo }}" alt="{{ site.titel }}">
-        <p class="footer__motto">{{ site.bund_tekst }}</p>
+        {% if site.email %}
+          <p class="footer__label">{{ site.email_overskrift or "Kontakt os" }}</p>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        {% endif %}
       </div>
       <nav class="footer__nav" aria-label="Sider">
         <a href="/">Forside</a>
@@ -50,10 +53,7 @@
         {% for s in site.sociale_medier %}
           <a href="{{ s.link }}" target="_blank" rel="noopener">{{ s.navn }} <span>{{ s.brugernavn }}</span></a>
         {% endfor %}
-        {% if site.email %}
-          <p class="footer__label footer__label--spaced">{{ site.email_overskrift or "Kontakt os" }}</p>
-          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
-        {% endif %}
+        {% if site.bund_tekst %}<p class="footer__motto">{{ site.bund_tekst }}</p>{% endif %}
       </div>
     </div>
     <p class="footer__copy container">© {% year %} {{ site.titel }}</p>

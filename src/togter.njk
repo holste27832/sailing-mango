@@ -20,16 +20,6 @@ permalink: /togter/
         </div>
       </div>
 
-      <div class="timeline reveal">
-        {% for t in togter %}
-          <a class="timeline__row" href="/togter/{{ t.slug }}/" data-status="{{ t.status | statusKlasse }}">
-            <span class="timeline__date"><strong>{{ t.start | dato("kort") }}</strong> – {{ t.slut | dato("kort") }}</span>
-            <span class="timeline__title">{{ t.titel }}<small>{{ t.fra }}{% if t.til %} → {{ t.til }}{% endif %}</small></span>
-            <span class="timeline__days">{{ t.start | dage(t.slut) }} dage</span>
-            <span class="status status--{{ t.status | statusKlasse }}">{{ t.status }}</span>
-          </a>
-        {% endfor %}
-      </div>
 
       <div class="togt-grid">
         {% for t in togter %}<div class="reveal" data-status="{{ t.status | statusKlasse }}" style="--d:{{ (loop.index0 % 3) * 90 }}ms">{{ m.togtkort(t) }}</div>{% endfor %}
