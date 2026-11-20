@@ -25,26 +25,31 @@ Hjemmesiden ligger på GitHub, så intet kan gå tabt: **hver eneste ændring ge
 1. I repository'et: **Settings → Pages**.
 2. Under *Build and deployment → Source* vælg **GitHub Actions**.
 3. Gå til fanen **Actions** og vent ca. 1 minut. Siden ligger nu på
-   `https://holste27832.github.io/sailing-mango/`
+   `https://holste27832.github.io/sailing-mango/` (nu sendes man videre til **https://sailingmango.dk**)
 
 ### 3. Giv kammeraten adgang
 1. Han opretter en GitHub-konto.
 2. **Settings → Collaborators → Add people** → skriv hans brugernavn.
 3. Han accepterer invitationen i sin e-mail.
 
-### 4. (Valgfrit) Eget domæne, fx sailingmango.dk
+### 4. Eget domæne: sailingmango.dk (sat op)
 1. Køb domænet (fx hos Simply, One.com eller Cloudflare).
 2. **Settings → Pages → Custom domain** → skriv `sailingmango.dk` og gem.
 3. Hos domæneudbyderen: tilføj DNS-poster som GitHub viser
    ([vejledning](https://docs.github.com/da/pages/configuring-a-custom-domain-for-your-github-pages-site)).
 4. Sæt hak i **Enforce HTTPS**. Linkene på siden tilpasser sig automatisk.
 
+   DNS hos Simply.com for sailingmango.dk:
+   - A-poster for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - CNAME for `www`: `holste27832.github.io`
+   - MX (`mx.simply.com`) og SPF-TXT skal blive stående – de styrer e-mailen.
+
 ---
 
 ## Del 2 – Sådan retter man på siden (uden kode)
 
 Hjemmesiden har sin egen **admin-side** på **`/admin/`**, fx
-`https://holste27832.github.io/sailing-mango/admin/` (eller `sailingmango.dk/admin/`).
+**https://sailingmango.dk/admin/**
 Alt, hvad man gemmer dér, bliver gemt i GitHub og er live på siden ca. 1 minut efter.
 
 ### Engangs-opsætning af admin
