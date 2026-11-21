@@ -79,6 +79,7 @@ i Cloudflare (`GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `ALLOWED_DOMAINS = sai
 Klik **Gem**, når du er færdig. Efter ca. 1 minut er ændringen live.
 
 ### Tips
+- **Kan du ikke se din ændring?** Der går 1–2 minutter, før siden er udgivet, og browseren kan vise den gamle udgave i op til 10 minutter. Tryk **Cmd+Shift+R** (Mac) / **Ctrl+Shift+R** (Windows), eller åbn siden i et privat vindue på telefonen.
 - **Tekst:** Tekstfelterne har fed, kursiv, links og punktlister ligesom i Word.
 - **Lister** (togter, FAQ, regler, priskort …): brug **Tilføj** for at tilføje, træk for at ændre rækkefølge, og slet med menuen ved hvert punkt.
 - **Billeder:** Brug gerne liggende billeder på max ~2000 px bredde og under 1 MB (fx komprimér på [squoosh.app](https://squoosh.app)).
