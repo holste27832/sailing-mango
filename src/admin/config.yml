@@ -6,6 +6,8 @@ backend:
   # ⚠️ SKIFT til jeres eget GitHub-brugernavn/repository, fx "tobias123/sailing-mango"
   repo: holste27832/sailing-mango
   branch: main
+  # Login-tjeneste (Cloudflare Worker) til knappen "Log ind med GitHub"
+  base_url: https://sveltia-cms-auth.holst10-9jacob.workers.dev
   commit_messages:
     create: "Opret {{collection}} “{{slug}}”"
     update: "Ret {{collection}} “{{slug}}”"

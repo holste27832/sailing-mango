@@ -52,20 +52,17 @@ Hjemmesiden har sin egen **admin-side** på **`/admin/`**, fx
 **https://sailingmango.dk/admin/**
 Alt, hvad man gemmer dér, bliver gemt i GitHub og er live på siden ca. 1 minut efter.
 
-### Engangs-opsætning af admin
-1. Åbn [`src/admin/config.yml`](src/admin/config.yml) og skift `repo: holste27832/sailing-mango` til jeres rigtige GitHub-brugernavn/repo. Commit og push.
-2. Hver person, der skal redigere, laver en **adgangsnøgle** (gøres én gang):
-   1. På GitHub: profilbillede → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
-   2. Navn: `Sailing Mango admin`. Udløb: fx 1 år.
-   3. *Repository access*: **Only select repositories** → vælg `sailing-mango`.
-      (Kammeraten skal først være tilføjet som collaborator – se trin 3 ovenfor.
-      Hvis repoet ikke kan vælges, skal ejeren lave token'et, eller repoet flyttes til en fælles *organization*.)
-   4. *Permissions → Repository permissions → Contents*: **Read and write**.
-   5. Klik **Generate token** og kopiér koden.
-3. Gå til `/admin/`, klik **Log ind med adgangstoken**, og indsæt koden. Browseren husker login.
+### Sådan logger man ind
+1. Man skal have en gratis GitHub-konto og være tilføjet som collaborator på repoet
+   (ejeren: **Settings → Collaborators → Add people**).
+2. Gå til **https://sailingmango.dk/admin/** og klik **"Log ind med GitHub"**.
+3. Første gang spørger GitHub, om "Sveltia CMS Auth for Sailing Mango" må bruge kontoen – klik **Authorize**.
 
-> Knappen *“Log ind med GitHub”* virker først, hvis man opsætter en lille gratis login-tjeneste på Cloudflare
-> ([vejledning](https://github.com/sveltia/sveltia-cms-auth)). Adgangstoken-metoden virker med det samme.
+Bag knappen: en lille login-tjeneste på Cloudflare (`sveltia-cms-auth`, gratis) og en GitHub App
+("Sveltia CMS Auth for Sailing Mango", installeret på `sailing-mango`). Nøglerne ligger som variabler
+i Cloudflare (`GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `ALLOWED_DOMAINS = sailingmango.dk`).
+
+> Alternativ: **"Log ind med adgangstoken"** virker stadig, fx hvis login-tjenesten er nede.
 
 ### Hvad kan man rette?
 
