@@ -60,22 +60,22 @@ tal:
       vaerdi: 4,55 m
     - navn: Køl
       vaerdi: Bly, ca. 5.000 kg
-    - navn: Kabiner
+    - navn: Kahytter
       vaerdi: '5'
     - navn: Toiletter
       vaerdi: 3 elektriske
     - navn: Watermaker
-      vaerdi: 140 liter/time
+      vaerdi: 150 liter/time
     - navn: Solceller
-      vaerdi: 2.800 W
+      vaerdi: ~2.500 W
     - navn: Batteribank
       vaerdi: 1.200 Ah lithium
     - navn: Dinghy
-      vaerdi: Med 20 hk påhængsmotor
+      vaerdi: Highfield dinghy med 20 hk påhængsmotor
 bygget:
   overskrift: Bygget til livet på havet
   tekst: |-
-    Mango er ikke en luksusyacht, og det er heller ikke meningen. Der kommer saltvand på dækket, sand på gulvet, og ting kan gå i stykker. Vi passer på båden så godt, vi kan, men vi ved også godt, at båden og udstyret er til for at blive brugt – så vi behandler den ikke som et museumsskib.
+    Mango er ikke en luksusyacht, og det er heller ikke meningen. Der kommer saltvand på dækket, sand på gulvet, og ting kan gå i stykker. Vi passer på båden så godt, vi kan, men vi ved også godt, at båden og udstyret er til for at blive brugt – så vi behandler den ikke som et museum.
 
     Mango er altså vores flydende og selvforsynende hjem med plads til hele besætningen og en garanti for hyggelige stunder og minder, man ikke glemmer. Den skaber de perfekte rammer for vores ønske om at have sikkerheden i orden og humøret i top.
   billede: /billeder/mango-sejler.jpg
