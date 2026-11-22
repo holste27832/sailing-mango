@@ -134,11 +134,11 @@ trin:
     - titel: Find dit togt
       tekst: Kig på vores kommende togter og find det område og den periode, der passer dig.
     - titel: Skriv til os
-      tekst: Fortæl lidt om dig selv, hvorfor du gerne vil med, og hvad du håber at få ud af rejsen.
-    - titel: Videoopkald
-      tekst: Vi lærer hinanden bedre at kende, taler om livet ombord og gennemgår dine spørgsmål. Det er også din chance for at mærke efter, om Mango er det rigtige match.
+      tekst: Send os en besked på vores sociale medier eller vores mail. Så hører du fra os.
     - titel: Vi aftaler det praktiske
-      tekst: Hvis vi alle synes, det lyder som en god idé, aftaler vi plads, betaling og påmønstring.
+      tekst: Her aftaler vi plads, betaling og påmønstring.
+    - titel: Videoopkald
+      tekst: Vi lærer hinanden bedre at kende, taler om livet ombord og gennemgår dine spørgsmål. Det er også din chance for at møde dine medgaster for det aktuelle togt før påmønstring.
     - titel: Informationspakken
       tekst: Du modtager den detaljerede informationspakke, så du kan forberede dig ordentligt på rejsen.
   afslutning: Vi forventer ikke, at du kommer ombord som en erfaren sømand. Vi håber bare, at du møder op med et åbent sind, lyst til at lære og mod på at kaste dig ud i noget, der måske ligger lidt uden for din normale hverdag.
