@@ -3,13 +3,11 @@ top:
   undertekst: Alt, du skal vide om livet ombord, økonomi, sikkerhed og hvordan du kommer med.
   video: /billeder/jungleflod-drone.mp4
   billede: /billeder/jungleflod-poster.jpg
-
 indholdsfortegnelse_titel: Hop direkte til
-
 livet:
   overskrift: Livet som gast på Mango
   fremhaevet: Forestil dig at vågne op i en lille bugt, hoppe direkte i det blå vand og spise morgenmad med udsigt til en ø, du måske aldrig havde hørt om før. Det er det liv, vi gerne vil dele med dig på Mango.
-  tekst: |
+  tekst: |-
     Vi oplever steder, mennesker og kulturer, som man sjældent kommer tæt på som almindelig turist. Nogle dage er vi på vej mod nye perler i paradis. Andre dage bliver vi liggende, fordi vi har fundet et sted, der er liiidt for godt til at forlade.
 
     Undervejs bruger vi tid på snorkling, dykning, vandreture, lokale markeder, små landsbyer, solnedgange, surfing og alt det uventede, der opstår, når man rejser på havet med andre eventyrlystne mennesker.
@@ -20,10 +18,9 @@ livet:
 
     Nogle dage er fulde af eventyr, mens andre dage kan gå med indkøb, rengøring eller en bog i skyggen. Vi tror på, at det er blandingen, der gør livet på havet til noget særligt. Og selv opvasken bliver lidt hyggeligere, når musikken spiller, og udsigten er palmer, moana-blåt vand og en solnedgang i horisonten.
   billede: /billeder/solnedgang-strand.jpg
-
 faellesskab:
   overskrift: Fællesskab og forventninger
-  tekst: |
+  tekst: |-
     Når man bor sammen på en sejlbåd, kommer man hurtigt tæt på hinanden. Vi deler få kvadratmeter og en hverdag, hvor man må tage del i et fællesskab. Derfor betyder det meget for os, hvem vi får med ombord.
 
     Vi forventer ikke, at alle er ens, eller at vi skal lave alting sammen. Der skal være plads til forskellige personligheder, interesser og behov for alenetid. Men vi forventer, at alle bidrager til et fællesskab, hvor man hjælper hinanden, tager hensyn og siger tingene højt, inden små irritationer vokser sig store.
@@ -35,29 +32,27 @@ faellesskab:
     Vi er gæster i de lande, vi besøger. Derfor behandler vi lokalbefolkningen, deres kultur og naturen med respekt. Det gælder både på båden og på vores ture i land.
   fremhaevet: Du bliver en del af et fællesskab og kommer hjem med flere oplevelser, erfaringer og venner, end du kan forestille dig.
   billede: /billeder/baal-strand.jpg
-
 oplevelser:
   overskrift: Oplevelser og sejlads
-  tekst: |
+  tekst: |-
     Der er noget særligt ved at ankomme til et nyt land fra søsiden. At se kysten dukke op i horisonten, kaste anker i en bugt og tage dinghyen ind for at udforske et sted, man endnu ikke kender.
 
     Vi vil gerne opleve mere end de klassiske turiststeder. Måske finder vi en lille restaurant, hvor maden er bedre end udsigten. Måske møder vi andre langturssejlere, bliver inviteret med til noget lokalt eller finder et koralrev, vi bare må tilbage til dagen efter.
 
     Havet er en stor del af vores rejse. Vi elsker livet både over og under overfladen, men ingen togter er ens. Nogle byder på masser af dykning og snorkling, mens andre tager os på opdagelse på land med vandreture, lokale oplevelser og nye steder at udforske. Vi har ikke behov for at fylde hver eneste dag med aktiviteter fra morgen til aften. Nogle af de bedste oplevelser opstår, når der ikke står noget i kalenderen.
   billede: /billeder/dyk-hjertegrotte.jpg
-  tekst2: |
-    Selve sejladsen er ikke kun transport mellem destinationerne. Du får mulighed for at tage roret, trimme sejl, lære om navigation og deltage i vagter på længere stræk. Vi tilpasser opgaverne til din erfaring, så du kan lære i dit eget tempo. Har du allerede sejlererfaring, er der selvfølgelig også plads til at bruge den.
+  billede2: /billeder/dyk-vrag.mp4
+  tekst2: |-
+    Selve sejladsen er ikke kun transport mellem destinationerne. Du får mulighed for at tage roret, trimme sejl, lære om navigation og deltage i vagter på længere stræk. Har du allerede sejlererfaring, er der selvfølgelig også plads til at bruge den.
 
     Vi sejler efter vejret, ikke efter en fastlåst rejseplan. Vind, bølger, strøm og bådens tilstand er nogle af de ting, som er med til at bestemme, hvor vi tager hen, hvornår vi sejler, og hvor lang tid turen tager.
 
     En planlagt destination kan blive skiftet ud med en anden, og en afgang kan blive udskudt, hvis forholdene ikke er gode. Vi kan også blive nødt til at bruge nogle dage på en reparation eller vente på et bedre vejrvindue. Det er en naturlig del af langturssejlads.
 
     Vi planlægger vores togter, så du ved, hvilket område vi skal opleve, og hvornår du skal være med. Men du skal have lyst til eventyret undervejs og ikke kun én bestemt ø på kortet.
-  billede2: /billeder/dyk-vrag.mp4
-
 sikkerhed:
   overskrift: Sikkerhed ombord
-  tekst: |
+  tekst: |-
     At tage med på en længere sejltur er en stor beslutning. Du overlader en del af din hverdag og sikkerhed til mennesker, du måske kun lige har mødt. Det ansvar tager vi alvorligt.
 
     Vi har begge teoretisk og praktisk erfaring med sejlads og livet ombord, og vores tilgang er, at sikkerhed ikke kun handler om udstyret. Det handler mindst lige så meget om forberedelse, gode beslutninger og en besætning, der ved, hvad de laver.
@@ -75,10 +70,9 @@ sikkerhed:
     - Rusmidler hører ikke til på Mango og medfører øjeblikkelig afmønstring.
     - Rygning er tilladt bagerst på båden, hvor det ikke er til gene for andre.
   efter_tekst: Vi gennemgår også de konkrete regler i informationspakken inden påmønstring, så du ved, hvad du siger ja til. Vi vil gerne have, at du glæder dig til rejsen med sommerfugle i maven frem for med ubesvarede spørgsmål.
-
 oekonomi:
   overskrift: Økonomi og praktisk information
-  tekst: |
+  tekst: |-
     Mango er et privat langtursprojekt, hvor vi deler udgifterne ved at sejle og bo sammen. Som gast betaler du et bidrag til bådens drift og de fælles udgifter under togtet. Det gør det muligt for os at dele eventyret med andre og fortsætte rejsen over længere tid.
 
     Prisen afhænger af togtets længde og område. Når du kontakter os om et konkret togt, får du oplyst det samlede bidrag, hvad det dækker, og hvilke udgifter du selv skal regne med. Vi ønsker ikke, at du skal stå ombord og være i tvivl om, hvad du har betalt for.
@@ -108,7 +102,7 @@ oekonomi:
   selv:
     - titel: Flybilletter og transport
       tekst: Prisen afhænger af på- og afmønstringsstedet.
-      maerke: ""
+      maerke: ''
     - titel: Rejseforsikring
       tekst: Sørg for, at forsikringen dækker, når du sejler som gast, og at den dækker det område og tidspunkt, du tager afsted.
       maerke: Krav
@@ -120,9 +114,9 @@ oekonomi:
       maerke: Stærkt anbefalet
     - titel: Visa, vaccinationer og personlige udgifter
       tekst: Vi anbefaler også en økonomisk buffer til uforudsete udgifter.
-      maerke: ""
+      maerke: ''
   praktisk_overskrift: Godt at vide
-  praktisk: |
+  praktisk: |-
     Husk, at en sejlbåd ikke altid kan være præcis det sted, man havde planlagt. Vi aftaler påmønstringsområde på forhånd, men den præcise havn eller ankerplads kan afhænge af vejret og andet. Vent derfor med at bestille transport, der kræver en bestemt ankomsthavn, til vi har koordineret det. 90 % af tiden ligger vi for anker, så du kan forvente, at det sidste stykke af din rejse bliver med vores trofaste dinghy, når vi henter dig på land.
 
     Livet ombord er forholdsvis simpelt. Vi har begrænset plads, vand og strøm, og man lærer hurtigt, at et langt varmt bad er noget, man finder på land. Til gengæld har vi havet som swimmingpool og en udsigt, der skifter næsten hver dag.
@@ -130,10 +124,9 @@ oekonomi:
     Du får din egen faste soveplads, men deler resten af bådens faciliteter med de andre gaster og os. Vi hjælpes ad med at holde det rent og rart at være ombord, og alle tager hensyn til, at båden også er vores fælles hjem.
 
     Du behøver ikke købe en masse dyrt udstyr for at tage med. Inden afrejse modtager du en informationspakke med pakkeliste, praktiske forberedelser, regler og alt det, du skal vide før påmønstring. Her gennemgår vi også de mere detaljerede forhold omkring sikkerhed, forsikring og ansvar.
-
 trin:
   overskrift: Sådan bliver du gast
-  tekst: |
+  tekst: |-
     Vi vil gerne lære dig lidt at kende, inden vi inviterer dig med ombord. Ikke fordi du skal igennem en optagelsesprøve, men fordi det betyder meget for oplevelsen, at vi passer godt sammen som besætning.
 
     Du behøver hverken sejlerbevis eller tidligere erfaring med langturssejlads. Vi lægger langt større vægt på din indstilling, nysgerrighed og lyst til at være en del af fællesskabet.
@@ -149,7 +142,6 @@ trin:
     - titel: Informationspakken
       tekst: Du modtager den detaljerede informationspakke, så du kan forberede dig ordentligt på rejsen.
   afslutning: Vi forventer ikke, at du kommer ombord som en erfaren sømand. Vi håber bare, at du møder op med et åbent sind, lyst til at lære og mod på at kaste dig ud i noget, der måske ligger lidt uden for din normale hverdag.
-
 faq:
   overskrift: Ofte stillede spørgsmål
   spoergsmaal:
