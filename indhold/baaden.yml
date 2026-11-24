@@ -31,8 +31,8 @@ indenfor:
   grundplan: /billeder/grundplan.jpg
   grundplan_tekst: Grundplan over Mango – fem kahytter, tre toiletter og en stor salon midt i båden.
   billeder:
-    - billede: /billeder/inde-salon.jpg
-      tekst: Salonen – her spiser vi, spiller spil og planlægger næste destination
+    - billede: /billeder/Skærmbillede 2026-11-24 kl. 11.23.27.png
+      tekst: Cockpittet – her spiser vi, spiller spil og planlægger vores næste destination.
     - billede: /billeder/inde-gang.jpg
       tekst: Gangen mod forkahytten (med vaskemaskine!)
     - billede: /billeder/inde-kahyt-for.jpg
@@ -45,7 +45,7 @@ indenfor:
       tekst: Et af de tre elektriske toiletter
     - billede: /billeder/inde-toilet-2.jpg
       tekst: Toilet med håndvask og skabsplads
-    - billede: /billeder/inde-proviant.jpg
+    - billede: /billeder/Skærmbillede 2026-11-24 kl. 11.23.27.png
       tekst: Proviantrum og fryser
 tal:
   overskrift: Mango i tal
