@@ -1,16 +1,18 @@
 ---
-titel: "EKSEMPEL: Grenadinerne"
+titel: Togt 1 - Grenadinerne
 omraade: Caribien
-start: 2027-01-08
-slut: 2027-02-05
-fra: Martinique
-til: Grenada
+start: 2027-01-03
+slut: 2027-01-24
+fra: Grenada
+til: Martinique
 status: Ledige pladser
-pladser: 3
+pladser: 6
 billede: /billeder/palmeoe.jpg
+video: ''
 kort_beskrivelse: Turkisblåt vand, skildpadder og små øer med strandbarer. Et perfekt første togt.
 vis: true
 ---
+
 Dette er et **eksempel-togt**. Skriv her, hvad I forventer at opleve undervejs: øer, dykkersteder, vandreture, stemning osv.
 
 - Snorkling med skildpadder
