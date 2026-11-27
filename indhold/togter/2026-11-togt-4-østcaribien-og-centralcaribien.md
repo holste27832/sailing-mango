@@ -1,5 +1,5 @@
 ---
-titel: Togt 4 - Østcaribien og Centralcaribien
+titel: Togt 4 - Nordøstcaribien og Centralcaribien
 omraade: Caribien
 start: 2027-03-31
 slut: 2027-05-02
@@ -13,4 +13,4 @@ kort_beskrivelse: Vi starter på de britiske jomfruøer med caribisk øhop, snor
 vis: true
 ---
 
-TEST TEST TEST
+Detaljer kommer snart..
