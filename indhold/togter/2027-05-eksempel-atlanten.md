@@ -1,5 +1,5 @@
 ---
-titel: Togt 2 - Grenadinerne
+titel: Togt 2 - Martinique
 omraade: Caribien
 start: 2027-01-25
 slut: 2027-02-22
