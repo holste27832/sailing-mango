@@ -1,10 +1,10 @@
 ---
 titel: Togt 5 - Den dominikanske republik og ABC-øerne
 omraade: Caribien
-start: 2027-02-12
-slut: 2027-03-12
-fra: Kommer snart..
-til: Kommer snart...
+start: 2027-05-20
+slut: 2027-06-23
+fra: Den Dominikanske Republik
+til: ABC-øerne
 status: Ledige pladser
 pladser: 6
 billede: /billeder/palmer.jpg
