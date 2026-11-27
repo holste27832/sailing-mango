@@ -5,8 +5,8 @@ start: 2027-01-03
 slut: 2027-01-24
 fra: Grenada
 til: Martinique
-status: Ledige pladser
-pladser: 6
+status: Få pladser tilbage
+pladser: 2
 billede: /billeder/palmeoe.jpg
 video: ''
 kort_beskrivelse: Turkisblåt vand, skildpadder og små øer med strandbarer. Et perfekt første togt.
