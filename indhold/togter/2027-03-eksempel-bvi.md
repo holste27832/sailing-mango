@@ -1,10 +1,10 @@
 ---
-titel: 'Togt 3: Ukendt'
+titel: 'Togt 3: Østcaribien'
 omraade: Caribien
 start: 2027-02-25
 slut: 2027-03-25
-fra: UKENDT
-til: Ukent
+fra: Martinique
+til: De Britiske Jomfruøer
 status: Ledige pladser
 pladser: 6
 billede: /billeder/strand-trae.jpg
@@ -13,4 +13,4 @@ kort_beskrivelse: Korte stræk, mange ankerbugter og masser af tid i vandet.
 vis: true
 ---
 
-Dette er et **eksempel-togt**. Udskift teksten med det rigtige program.
+Detaljer kommer snart
