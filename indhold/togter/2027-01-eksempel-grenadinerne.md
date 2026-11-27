@@ -9,12 +9,8 @@ status: Få pladser tilbage
 pladser: 2
 billede: /billeder/palmeoe.jpg
 video: ''
-kort_beskrivelse: Turkisblåt vand, skildpadder og små øer med strandbarer. Et perfekt første togt.
+kort_beskrivelse: Wakeboard bag dinghy, se skildpadder og besøge små øer med strandbarer. Et perfekt første togt.
 vis: true
 ---
 
-Dette er et **eksempel-togt**. Skriv her, hvad I forventer at opleve undervejs: øer, dykkersteder, vandreture, stemning osv.
-
-- Snorkling med skildpadder
-- Tobago Cays
-- Lokale markeder
+Detaljer kommer snart...
