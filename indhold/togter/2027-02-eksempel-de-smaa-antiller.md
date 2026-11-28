@@ -13,4 +13,4 @@ kort_beskrivelse: Vi starter i Den Dominikanske Republik med tropisk natur, vand
 vis: true
 ---
 
-Dette er et **eksempel-togt**. Udskift teksten med det rigtige program.
+Detaljer kommer snart
