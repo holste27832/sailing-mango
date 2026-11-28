@@ -12,5 +12,3 @@ video: ''
 kort_beskrivelse: Øhop, snorkling, badning, vandreture og oplevelser på land.
 vis: true
 ---
-
-Dette er et **eksempel-togt**. Udskift teksten med det rigtige program.
